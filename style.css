@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=News+Cycle&family=Raleway:wght@300&display=swap');
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: #202020;
+    font-family: 'Maven Pro', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border: 1px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 10px 25px -8px #3e3d3d;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('assets/jl.jpg')no-repeat center center/cover;
+    opacity: .8;
+    z-index: -1;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #000);
+    z-index: -1;
+}
+
+header nav {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+}
+
+.logo {
+    font-size: 30px;
+    color: #fff;
+    font-family: 'News Cycle', sans-serif;
+}
+
+.logo span {
+    font-size: 15px;
+    color: rgb(255, 255, 255, 0.8);
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .logo span {
+        display: none;
+    }
+}
+
+.searchbar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbar input {
+    padding: 5px 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    outline: none;
+    margin-right: 10px;
+}
+
+.searchbar input::placeholder {
+    color: #fff;
+}
+
+.profile {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.profile:hover {
+    cursor: pointer;
+    filter: brightness(0.9);
+}
+
+.searchbox {
+    position: absolute;
+    width: 270px;
+    height: 190px;
+    right: 0;
+    top: 50px;
+    z-index: 999;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.searchbox::-webkit-scrollbar {
+    width: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.searchbox:hover::-webkit-scrollbar {
+    visibility: visible;
+}
+
+.searchbox::-webkit-scrollbar-thumb {
+    width: 6px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    visibility: hidden;
+}
+
+.searchbox:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.searchcard {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 3px 0px;
+    text-decoration: none;
+    display: none;
+}
+
+.searchcard::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.thumb {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #fff;
+    border-radius: 0px;
+    margin-left: 8px;
+    background-size: cover;
+}
+
+.info {
+    color: #fff;
+    margin-left: 10px;
+}
+
+.info h3 {
+    font-size: 15px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 200px
+}
+
+.info p {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.star {
+    width: 12px;
+}
+
+.content {
+    position: relative;
+    color: #fff;
+    margin-top: 10%;
+    text-align: center;
+}
+
+.title {
+    font-size: 60px;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+}
+
+.watch {
+    font-size: 15px;
+    padding: 1em 2.7em;
+    font-weight: 500;
+    background: rgb(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.6em;
+}
+
+.watch:hover {
+    cursor: pointer;
+}
+
+.gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0.6em;
+    margin-top: -0.25em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+  
+.label {
+    position: relative;
+    top: -1px;
+}
+  
+.transition {
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-duration: 500ms;
+    background-color: #4E4FEB;
+    border-radius: 9999px;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.watch:hover .transition {
+    width: 14em;
+    height: 14em;
+}
+  
+.watch:active {
+    transform: scale(0.97);
+}
+
+.star2 {
+    width: 17px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 20px;
+}
+
+.year {
+    color: #000;
+    padding: 5px;
+}
+
+.genre {
+    padding: 5px;
+}
+
+.rating {
+    padding: 5px;
+}
+
+.movies {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 0px 50px;
+    bottom: 20px;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.moviebox {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.moviebox::-webkit-scrollbar {
+    display: none;
+}
+
+.moviecard {
+    position: relative;
+    min-width: 270px;
+    height: 180px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    margin-right: 10px;
+    background: #000;
+    transition: .3s linear;
+}
+
+.cardimg {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.left {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 999;
+    cursor: pointer;
+    transition: .3s linear;
+    opacity: 0;
+}
+
+.right {
+    width: 30px;
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 999;
+    cursor: pointer;
+    transition: .3s linear;
+    opacity: 0;
+}
+
+section:hover .left {
+    opacity: 1;
+}
+
+section:hover .right {
+    opacity: 1;
+}
